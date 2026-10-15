@@ -1,0 +1,23 @@
+# VS Code
+.vscode/
+
+# IntelliJ
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+
+# Backend
+backend/bodhlens-ai/target/
+backend/bodhlens-ai/.classpath
+backend/bodhlens-ai/.project
+backend/bodhlens-ai/.settings/
+backend/bodhlens-ai/.factorypath
+
+# Frontend
+frontend/node_modules/
+frontend/dist/

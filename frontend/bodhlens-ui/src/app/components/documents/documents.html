@@ -1,0 +1,84 @@
+<app-back-button></app-back-button>
+<div class="documents-container">
+
+    <h1>📚 My Documents</h1>
+
+    <p class="subtitle">
+        Manage all your uploaded documents.
+    </p>
+
+    <button class="upload-btn"
+            (click)="uploadDocuments()">
+        ⬆ Upload New Document
+    </button>
+
+    @if(documents.length < 1) {
+        <div class="empty-state">
+
+            <div class="empty-icon">
+                📄
+            </div>
+
+            <h2>No documents uploaded yet</h2>
+
+            <p>
+                Upload your first document to start chatting with AI.
+            </p>
+        
+        </div>
+    } @else {
+        <div class="documents-grid">
+
+            @for(document of documents; track document.id) {
+
+                <div class="document-card">
+                    <div class="document-icon">
+                        📄
+                    </div>
+                    
+                    <h3>{{ document.fileName }}</h3>
+
+                    <p class="document-status">
+                        {{ document.status }}
+                    </p>
+
+                    <p class="document-date">
+                        {{ document.createdAt | date:'dd-MMM-yyyy, hh:mm a' }}
+                    </p>
+
+                    <div class="document-actions">
+
+                        <button
+                            class="action-btn view-btn"
+                            title="View Document"
+                            (click)="viewDocument(document)">
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                        </button>
+
+                        <button
+                            class="action-btn chat-btn"
+                            title="Chat"
+                            (click)="chat(document)">
+                            <span class="material-symbols-outlined">
+                                chat
+                            </span>
+                        </button>
+
+                        <button
+                            class="action-btn delete-btn"
+                            title="Delete"
+                            (click)="deleteDocument(document)">
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                        </button>
+
+                    </div>
+                </div>
+            }
+        </div>
+    }
+
+</div>

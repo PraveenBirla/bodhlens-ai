@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: bodhlens-ai
+
+#  datasource:
+#    url: jdbc:postgresql://localhost:5433/bodhlens
+#    username: postgres
+#    password: postgres@123
+#    driver-class-name: org.postgresql.Driver
+  datasource:
+    url: jdbc:postgresql://localhost:5434/bodhlens
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+      
+    show-sql: true
+    
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8080
+  
+jwt:
+  secret: jS+/nKb3fFRFoVeki7vueXEznlgvK9jpnyqSCF3bQRU=
+  expiration: 3600000
+
+ai:
+  provider: OLLAMA
+  
+ollama:
+  url: http://localhost:11434
+  model: llama3.2
+  embedding-model: nomic-embed-text

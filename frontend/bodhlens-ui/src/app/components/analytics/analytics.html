@@ -1,0 +1,85 @@
+@if(analytics) {
+
+<div class="analytics-page">
+
+    <app-back-button></app-back-button>
+    <div class="analytics-header">
+        <h1>📊 Analytics Dashboard</h1>
+        <p>Insights into documents, users and AI interactions</p>
+    </div>
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <div class="icon">📄</div>
+            <h3>Documents</h3>
+            <p>{{ analytics.totalDocuments }}</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="icon">👥</div>
+            <h3>Users</h3>
+            <p>{{ analytics.totalUsers }}</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="icon">💬</div>
+            <h3>Sessions</h3>
+            <p>{{ analytics.totalChatSessions }}</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="icon">❓</div>
+            <h3>Questions</h3>
+            <p>{{ analytics.totalQuestionsAsked }}</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="icon">🧩</div>
+            <h3>Chunks</h3>
+            <p>{{ analytics.totalChunks }}</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="icon">⚡</div>
+            <h3>Avg Response</h3>
+            <p>
+                {{ analytics.averageResponseTime / 1000 | number:'1.1-1' }}s
+            </p>
+        </div>
+
+        <div class="stat-card">
+            <div class="icon">📚</div>
+            <h3>Avg Chunks / Doc</h3>
+            <p>{{ analytics.averageChunksPerDocument }}</p>
+        </div>
+
+    </div>
+
+    <div class="insights-grid">
+
+        <div class="insight-card">
+            <h3>📄 Most Queried Document</h3>
+            <p>{{ analytics.mostQueriedDocument }}</p>
+        </div>
+
+        <div class="insight-card">
+            <h3>👤 Most Active User</h3>
+            <p>{{ analytics.mostActiveUser }}</p>
+        </div>
+
+        <div class="chart-card">
+
+            <h3>📈 Upload Trend</h3>
+
+            <div class="chart-container">
+                <canvas id="uploadChart"></canvas>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+}
